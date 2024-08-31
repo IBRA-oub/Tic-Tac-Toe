@@ -1,63 +1,27 @@
-<head>
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
-    <title>Tic Tac Toe</title>
+    <title>LoginPage</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- players names-->
-<div class="players-container">
-    <!--first player-->
-    <div class="first-player">
-        <p class="firstPlayerName">brahim</p>
-        <div class="elementX">X</div>
-    </div>
-    <!--first player score-->
-    <div class="firstPlayerScore">
-            3
-    </div>
-    <!--second player-->
-    <div class="second-player">
-
-        <div class="elementO">O</div>
-        <p class="secondPlayerName">brahim oubr</p>
-
-    </div>
-
-    <!--second player score-->
-    <!--first player score-->
-    <div class="secondPlayerScore">
-        3
-    </div>
-
-
-</div>
-
-<!--game history-->
-    <a href="/login/login.html">
-        <div class="history">
-            i
+<div class="login-container">
+    <form >
+        <div class="form-group">
+            <label for="player1">Player 1:</label>
+            <input type="text" class="input1" id="player1" name="player1" placeholder="X">
+            <p id="firstErrorMessage"></p>
         </div>
-    </a>
-
-<!-- cell -->
-<div class="game-container" id="game-container">
-
+        <div class="form-group">
+            <label for="player2">Player 2:</label>
+            <input type="text" class="input2" id="player2" name="player2" placeholder="O">
+            <p id="SecondErrorMessage"></p>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
 </div>
-
-<!--button -->
-<div class="button-container">
-    <div class="recommencer">
-        start over
-    </div>
-    <div class="rejouer">
-        replay
-    </div>
-
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
