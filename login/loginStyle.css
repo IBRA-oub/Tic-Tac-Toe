@@ -19,9 +19,10 @@ body{
 
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px black;
     width: 300px;
-    border: 2px solid white;
+    backdrop-filter: blur(5px);
+
 }
 
 .form-group {
@@ -42,10 +43,22 @@ input[type="text"] {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+
+}
+.input1{
+    background-color: #fdb8b8;
+}
+.input2{
+    background-color: #a9bafd;
+}
+p{
+    color: #f80303;
+    font-family: cursive;
+    text-shadow: #f80303 0 0 1px;
 }
 
 button {
-    width: 100%;
+    width: 106%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -53,6 +66,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 10px;
 }
 
 button:hover {
