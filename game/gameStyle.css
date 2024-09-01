@@ -22,7 +22,7 @@ body::before {
     background-image: inherit;
     background-size: inherit;
     background-repeat: inherit;
-    filter: blur(2px);
+    filter: blur(4px);
     z-index: -1;
 }
 
