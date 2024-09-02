@@ -78,8 +78,8 @@ cells.forEach(cell => {
                     secondPlayerScore.innerHTML = lastPlayers.secondPlayer.score;
                   modalContent.style.backgroundColor = '#a9bafd'
                 }
-                // update score in localStorage
                 modalText.innerHTML = currentPlayer + ' wins!';
+                // update score in localStorage
                 players[players.length - 1] = lastPlayers;
                 localStorage.setItem('players', JSON.stringify(players));
 
