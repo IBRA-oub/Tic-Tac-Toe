@@ -54,9 +54,9 @@ const secondPlayer = document.querySelector('#secondPlayer')
 // logic for game
 cells.forEach(cell => {
     cell.addEventListener('click', function() {
-        // Vérifie si la cellule est déjà utilisée
+        
         if (cell.innerHTML === '') {
-            // Place le symbole du joueur actuel dans la cellule
+            
             cell.innerHTML = currentPlayer;
 
           
@@ -155,7 +155,7 @@ function checkHorizontal(row, col, player) {
     return false;
 }
 
-// Vérification verticale
+// Vertical check
 function checkVertical(row, col, player) {
     let count = 0;
 
@@ -170,7 +170,7 @@ function checkVertical(row, col, player) {
     return false;
 }
 
-// Vérification diagonale descendante (haut-gauche à bas-droit)
+// descending diagonal check (top-left to bottom-right)
 function checkDiagonalDescending(row, col, player) {
     let count = 0;
 
@@ -190,7 +190,7 @@ function checkDiagonalDescending(row, col, player) {
     return false;
 }
 
-// Vérification diagonale montante (bas-gauche à haut-droit)
+// ascending diagonal check (bottom-left to top-right)
 function checkDiagonalAscending(row, col, player) {
     let count = 0;
 
