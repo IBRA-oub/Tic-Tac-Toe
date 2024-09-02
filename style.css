@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html, body {
+    height: 100%;
+}
 body{
 
     background-image: url(/Images/rustic-brick-wall-background.jpg);
@@ -15,6 +18,8 @@ body{
     overflow-x: hidden;
 
 }
+
+
 .login-container {
 
     padding: 40px;
@@ -72,3 +77,5 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+  
