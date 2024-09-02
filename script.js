@@ -22,10 +22,11 @@ const validate = () => {
     } else if (firstPlayer.value.length < 3) {
         firstErrorMessage.innerHTML = 'the name must contain at least 3 characters';
         form_validation = false;
-    } else if (firstPlayer.value.length > 9) {
+    } else if (firstPlayer.value.length > 11) {
         firstErrorMessage.innerHTML = 'the name must contain a maximum of 9 characters';
         form_validation = false;
     } else {
+        // localStorage.setItem('firstPlayer', firstPlayer.value);
         firstErrorMessage.innerHTML = '';
     }
 
@@ -39,11 +40,22 @@ const validate = () => {
     } else if (secondPlayer.value.length < 3) {
         secondErrorMessage.innerHTML = 'the name must contain at least 3 characters';
         form_validation = false;
-    } else if (secondPlayer.value.length > 9) {
+    } else if (secondPlayer.value.length > 11) {
         secondErrorMessage.innerHTML = 'the name must contain a maximum of 9 characters';
         form_validation = false;
     } else {
+        // localStorage.setItem('secondPlayer', secondPlayer.value);
         secondErrorMessage.innerHTML = '';
+    }
+
+    if (form_validation) {
+        let players = JSON.parse(localStorage.getItem('players')) || [];
+        players.push({
+            firstPlayer: { name: firstPlayer.value, score: 0 },
+            secondPlayer: { name: secondPlayer.value, score: 0 }
+        });
+
+        localStorage.setItem('players', JSON.stringify(players));
     }
 };
 

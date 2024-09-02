@@ -63,7 +63,7 @@ body::before {
     height: 6vh;
     margin-left: 2%;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 4px solid green;
     display: flex;
     justify-content: space-between;
 
@@ -197,4 +197,63 @@ body::before {
 
 }
 
+.xStyle {
+    background-color: #fdb8b8;
+    color: red;
+    font-family: cursive;
+}
 
+.oStyle {
+    background-color: #a9bafd;
+    color: blue;
+    font-family: cursive;
+}
+
+
+/* The Modal (background) */
+.modal-container{
+    display: none ;
+    
+}
+.modal {
+    position: fixed;
+    
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    
+    background-color: #fefefe;
+    padding: 20px;
+    font-family: cursive;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+.close {
+    color: black;
+    float: right;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(104, 102, 102);
+    text-decoration: none;
+    cursor: pointer;
+}

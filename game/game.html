@@ -10,25 +10,25 @@
 <!-- players names-->
 <div class="players-container">
     <!--first player-->
-    <div class="first-player">
-        <p class="firstPlayerName">brahim</p>
+    <div class="first-player" id="firstPlayer">
+        <p class="firstPlayerName" id="firstPlayerName"></p>
         <div class="elementX">X</div>
     </div>
     <!--first player score-->
-    <div class="firstPlayerScore">
+    <div class="firstPlayerScore" id="firstPlayerScore">
             3
     </div>
     <!--second player-->
-    <div class="second-player">
+    <div class="second-player" id="secondPlayer">
 
         <div class="elementO">O</div>
-        <p class="secondPlayerName">brahim oubr</p>
+        <p class="secondPlayerName" id="secondPlayerName"></p>
 
     </div>
 
     <!--second player score-->
     <!--first player score-->
-    <div class="secondPlayerScore">
+    <div class="secondPlayerScore" id="secondPlayerScore">
         3
     </div>
 
@@ -57,6 +57,20 @@
     </div>
 
 </div>
+<div class="modal-container" id="modal-container">
+    <div id="winModal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <div class="close-container">
+
+                <span id="closeModal" class="close">&times;</span>
+            </div>
+            <p id="modalText"></p>
+        </div>
+    </div>
+</div>
+
+
+
 
 <script src="gameScript.js"></script>
 </body>
