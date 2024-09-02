@@ -13,7 +13,8 @@ if (players.length > 0) {
     lastPlayers = { firstPlayer: { name: 'no name', score: 0 }, secondPlayer: { name: 'no name', score: 0 } };
 }
 
-// Afficher les noms et scores des joueurs
+// __________________________Afficher les noms et scores des joueurs____________________________
+
 if (lastPlayers.firstPlayer) {
     firstPlayerName.innerHTML = lastPlayers.firstPlayer.name;
     firstPlayerScore.innerHTML = lastPlayers.firstPlayer.score;
@@ -30,7 +31,8 @@ if (lastPlayers.secondPlayer) {
     secondPlayerScore.innerHTML = '0';
 }
 
-// Génération dynamique des cases
+// ______________________________Dynamic generation of cells________________________________
+
 const container = document.querySelector('#game-container');
 
 for (let i = 0; i < 400; i++) {
@@ -51,7 +53,7 @@ const modalContent = document.querySelector('#modalContent')
 const firstPlayer = document.querySelector('#firstPlayer')
 const secondPlayer = document.querySelector('#secondPlayer')
 
-// logic for game
+//____________________________________ logic for game_____________________________
 cells.forEach(cell => {
     cell.addEventListener('click', function() {
         
@@ -60,7 +62,7 @@ cells.forEach(cell => {
             cell.innerHTML = currentPlayer;
 
           
-
+            // check for win
             if (checkWin(parseInt(cell.id.replace('item', '')), currentPlayer)) {
 
                 // alert(currentPlayer + ' wins!');
@@ -83,7 +85,13 @@ cells.forEach(cell => {
 
                 return; 
             }
-            
+             // Check for a null match
+             if (isDraw()) {
+                winModal.style.display = 'flex';
+                modalContent.style.backgroundColor = 'white'
+                modalText.innerHTML = 'Null match! Play again';
+                return;
+            }
             
             if (currentPlayer === 'X') {
                 // border color for turn
@@ -107,10 +115,11 @@ cells.forEach(cell => {
 });
 
 
-// close modal window
+// ______________________________close modal window_____________________________________________
+
 document.querySelector('#closeModal').addEventListener('click', () => {
     
-    // 
+    
     cells.forEach(cell => {
         cell.innerHTML = '';
         cell.classList.remove('xStyle'); 
@@ -127,11 +136,12 @@ document.querySelector('#closeModal').addEventListener('click', () => {
 const gridSize = 20; 
 const winCondition = 5;
 
-// win function
+// ________________________________________win function___________________________________________
 function checkWin(index, player) {
     const row = Math.floor(index / gridSize);
+    // cosole.log(row)
     const col = index % gridSize;
-
+    // cosole.log(col)
     return (
         checkHorizontal(row, col, player) || 
         checkVertical(row, col, player) || 
@@ -140,7 +150,8 @@ function checkWin(index, player) {
     );
 }
 
-// Vérification horizontale
+// _____________________________________Vérification horizontale_____________________________________________
+
 function checkHorizontal(row, col, player) {
     let count = 0;
 
@@ -155,7 +166,8 @@ function checkHorizontal(row, col, player) {
     return false;
 }
 
-// Vertical check
+//________________________________________________ Vertical check______________________________________________
+
 function checkVertical(row, col, player) {
     let count = 0;
 
@@ -170,13 +182,16 @@ function checkVertical(row, col, player) {
     return false;
 }
 
-// descending diagonal check (top-left to bottom-right)
+//__________________________________ descending diagonal check (top-left to bottom-right)____________________________
+
 function checkDiagonalDescending(row, col, player) {
     let count = 0;
 
     for (let i = -winCondition + 1; i < winCondition; i++) {
         let newRow = row + i;
+        // console.log(newRow)
         let newCol = col + i;
+        // console.log(newCol)
 
         if (newRow >= 0 && newRow < gridSize && newCol >= 0 && newCol < gridSize) {
             if (cells[newRow * gridSize + newCol].innerHTML === player) {
@@ -190,7 +205,8 @@ function checkDiagonalDescending(row, col, player) {
     return false;
 }
 
-// ascending diagonal check (bottom-left to top-right)
+//___________________________________ ascending diagonal check (bottom-left to top-right)________________________________
+
 function checkDiagonalAscending(row, col, player) {
     let count = 0;
 
@@ -210,5 +226,36 @@ function checkDiagonalAscending(row, col, player) {
     return false;
 }
 
+// ______________________________null match__________________________
 
+function isDraw() {
+    for (let i = 0; i < cells.length; i++) {
+        if (cells[i].innerHTML === '') {
+            return false; 
+        }
+    }
+    return true; 
+}
+
+// _________________________________________replay________________________
+
+document.querySelector('#replay').addEventListener('click',()=>{
+
+    cells.forEach(cell => {
+        cell.innerHTML = '';
+        cell.classList.remove('xStyle'); 
+        cell.classList.remove('oStyle'); 
+        winModal.style.display = 'none';
+    });
+
+    
+    currentPlayer = 'X';
+})
+
+// ______________________________________start-Over_________________________
+
+document.querySelector('#startOver').addEventListener('click',()=>{
+
+    window.location.href = '../index.html'
+})
 

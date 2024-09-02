@@ -170,7 +170,7 @@ body::before {
    display: flex;
     justify-content: space-evenly;
 }
-.recommencer{
+.start-over{
     width: 15%;
     height: 6vh;
     margin-left: 2%;
@@ -181,9 +181,10 @@ body::before {
     font-size:clamp(10px, 3vw , 30px);
     text-align: center;
     background-color: red;
+    cursor: pointer;
 
 }
-.rejouer{
+.replay{
     width: 15%;
     height: 6vh;
     margin-right: 2%;
@@ -194,6 +195,7 @@ body::before {
     font-family: cursive;
     font-size: clamp(10px, 3vw , 30px);
     text-align: center;
+    cursor: pointer;
 
 }
 
